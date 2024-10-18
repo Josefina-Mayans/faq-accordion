@@ -11,12 +11,12 @@ export default function FAQItem({ question, answer }) {
     };
 
     return (
-        <div className="faq-item">
-            <div className="faq-question" onClick={toggleOpen} style={{ cursor: 'pointer', fontWeight: 'bold' }}>
+        <div className="flex-column space-y-4 p-4">
+            <div className="flex text-dark-purple" onClick={toggleOpen} style={{ cursor: 'pointer', fontWeight: 'bold' }}>
                 {question}
-                <img className="icon" src={isOpen ? "../assets/images/icon-minus.svg" : "../assets/images/icon-plus.svg"} alt="icon"/>
+                <img className="pr-1" src={isOpen ? "../assets/images/icon-minus.svg" : "../assets/images/icon-plus.svg"} alt="icon"/>
             </div>
-            {isOpen && <p className="faq-answer">{answer}</p>}
+            {isOpen && <p className="text-grayish-purple">{answer}</p>}
         </div>
     );
 } 

@@ -23,7 +23,7 @@ const faqs = [
 
 export default function FAQList() {
     return (
-        <div>
+        <div className='divide-y divide-solid '>
             {faqs.map((faq, index) => (
                 <FAQItem key={index} question={faq.question} answer={faq.answer} />
             ))}
