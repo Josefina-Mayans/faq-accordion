@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FAQItem from './FAQItem';
 
 
@@ -22,10 +22,28 @@ const faqs = [
 ];
 
 export default function FAQList() {
+    const [focusedIndex, setFocusedIndex] = useState(0);
+
+    const handleFocus = (index) => {
+        setFocusedIndex(index);
+    };
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'ArrowDown') {
+            setFocusedIndex((prevIndex) => (prevIndex + 1) % faqs.length);
+        } else if (event.key === 'ArrowUp') {
+            setFocusedIndex((prevIndex) => (prevIndex - 1 + faqs.length) % faqs.length);
+        }
+    };
+
+
     return (
-        <div className='divide-y divide-solid '>
+        <div className='divide-y divide-solid ' onKeyDown={handleKeyDown}>
             {faqs.map((faq, index) => (
-                <FAQItem key={index} question={faq.question} answer={faq.answer} />
+                <FAQItem key={index} question={faq.question} answer={faq.answer}
+                    isFocused={focusedIndex === index}
+                    onFocus={() => handleFocus(index)}
+                    onToggle={() => { }} />
             ))}
         </div>
     );
