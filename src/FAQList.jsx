@@ -28,6 +28,14 @@ export default function FAQList() {
         setFocusedIndex(index);
     };
 
+    /**
+     * Handles keyboard navigation for the FAQ list.
+     *
+     * @param {Object} event - The keyboard event object.
+     * @param {string} event.key - The key that was pressed.
+     * @param {Function} setFocusedIndex - Function to update the focused index.
+     * @param {number} faqs.length - The length of the FAQ list.
+     */
     const handleKeyDown = (event) => {
         if (event.key === 'ArrowDown') {
             setFocusedIndex((prevIndex) => (prevIndex + 1) % faqs.length);
