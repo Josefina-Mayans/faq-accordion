@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://faq-accordion-zeta-bay.vercel.app/)
+- [Solution URL](https://www.frontendmentor.io/solutions/responsive-faq-accordion-component-using-react-and-tailwind-css-kroMzFIiHv)
+- [Live Site URL](https://faq-accordion-zeta-bay.vercel.app/)
 
 ## My process
 
